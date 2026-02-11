@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Letterboxd - Home</title>
+    <link rel="stylesheet" href="database_ui.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>LETTERBOXD</h1>
+            </div>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#" class="nav-link">Movies</a></li>
+                    <li><a href="#" class="nav-link">Genres</a></li>
+                    <li><a href="#" class="nav-link">New Releases</a></li>
+                    <li><a href="#" class="nav-link">Top Rated</a></li>
+                    <li><a href="#" class="nav-link">3D Movies</a></li>
+                    <li><a href="#" class="nav-link">My List</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="search-btn" aria-label="Search">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <button class="notification-btn" aria-label="Notifications">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+                        <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+                    </svg>
+                </button>
+                <button class="profile-btn" aria-label="Profile">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="hero-carousel" id="heroCarousel"></div>
+            <div class="hero-nav-dots" id="heroDots"></div>
+        </section>
+
+        <div class="container">
+            
+            <section class="category-section">
+                <div class="category-nav">
+                    <button class="category-btn active" data-filter="all">All</button>
+                    <button class="category-btn" data-filter="Sci-Fi">Sci-Fi</button>
+                    <button class="category-btn" data-filter="Horror">Horror</button>
+                    <button class="category-btn" data-filter="Action-Adventure">Action</button>
+                    <button class="category-btn" data-filter="Urban Fantasy">Fantasy</button>
+                    <button class="category-btn" data-filter="others">Others</button>
+                </div>
+            </section>
+
+            <section class="featured-section">
+                <h2 class="section-title">Featured Movies</h2>
+                <div class="featured-grid" id="featuredGrid"></div>
+            </section>
+
+            <section class="top10-section">
+                <h2 class="section-title">Top 10 Movies Today</h2>
+                <div class="scroll-grid" id="allMoviesGrid"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <div id="movieDetailOverlay" class="movie-detail-overlay">
+        <div class="detail-container">
+            <button id="closeDetail" class="close-detail" aria-label="Close">&times;</button>
+            
+            <div id="detailBanner" class="detail-banner">
+                </div>
+
+            <div class="detail-content">
+                <div class="detail-main">
+                    <h2 id="detailTitle">Movie Title</h2>
+                    
+                    <div class="detail-info-row">
+                        <span class="match-score">98% Match</span>
+                        <span id="detailYear" class="detail-year"></span>
+                        <span class="detail-rating">HD</span>
+                        <span id="detailDuration"></span>
+                    </div>
+
+                    <div class="detail-btns">
+                        <button class="btn-watch">▶ Play</button>
+                        <button class="btn-info">+ Add to List</button>
+                        <button class="btn-info" style="border-radius: 50%; width: 45px; padding: 0;">👍</button>
+                    </div>
+
+                    <p id="detailDescription" class="detail-description">
+                        Loading movie description...
+                    </p>
+                </div>
+
+                <div class="detail-sidebar">
+                    <p><span>Cast:</span> <span id="detailCast"></span></p>
+                    <p><span>Genres:</span> <span id="detailGenre"></span></p>
+                    <p><span>Rating:</span> <span id="detailRating"></span></p>
+                    <p><span>Available in:</span> 4K, 3D, Dolby Vision</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="database_ui.js"></script>
+    
+</body>
+</html>
